@@ -41,6 +41,17 @@ v = function(){} // function
 v = [1, 2, 3] // object - instead Array.isArray(arr)
 ```
 
+### BigInt
+
+Integer that can grow infinitely large (limited by memory of system). Don't mix that well with regular numbers.
+
+```
+var v = 42n
+// or
+var v = BigInt(42)
+typeof v // "bigint"
+```
+
 - Abstract Operations
 - Coercion
 - Equality
