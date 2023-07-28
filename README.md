@@ -57,6 +57,71 @@ typeof v // "bigint"
 - Equality
 - TypeScript, Flow, etc.
 
+### undefined vs. undeclared
+
+- Undeclared - never been created in any scope we have access to
+- Undefined - Variable that has been initialized - there is a variable, but at the moment it has no value
+- Uninitialized (TDZ - temporal dead zone) - Variable that has never been initialized - certain variables (block scoped ones for example) don't get initialized
+  - If you access `var` before it's declared, it is `undefined`. But if you do the same for `let` and `const`, they throw a `ReferenceError`.
+
+typeof - only operator that can reference something that doesn't exist without throwing an error
+
+### Special Values: `NaN` and `isNaN`
+
+`NaN`
+
+- Not a Number
+- actually is a sentinal value that indicates an invalid number
+  - A sentinel value is a special value in the context of an algorithm which uses its presence as a condition of termination, typically in a loop or recursive algorithm
+- Propogates all the way out, NaN combined with any number is NaN
+- `NaN` !== `NaN` - NaNs aren't equal to each other. Only value in JS that doesn't have the identity property - means it is not equal to itself
+- `typeof NaN === 'number'` - NaN is an invalid number
+
+`isNaN`
+
+```
+var n = Number('regular string') // NaN
+isNaN(n) // true
+isNaN('regular string') // true
+```
+
+- In the second example, the string is not NaN yet we are getting `true`. The `isNaN` utility coerces values to numbers before it checks if it is NaN.
+
+`Number.isNaN`
+
+```
+var n = Number('regular string') // NaN
+isNaN(n) // true
+isNaN('regular string') // false
+```
+
+- `Number.isNaN` tells us whether we are feeding in the NaN value (no coercion done)
+
+### Special Values: Negative Zero
+
+- Zero value with the sign bit on it
+- Early JS hid negative zero from developers
+
+```
+var trendRate = -0
+
+// weird cases
+trendRate === -0 // true
+trendRate === 0 // true
+trendRate.toString() // 0
+trendRate < 0 // false
+trendRate > 0 // false
+```
+
+- Starting in ES6 we got a way to determine negative zero: `Object.is` (colloquially a quadruple equals)
+
+```
+Object.is(trendRate, -0) // true
+Object.is(trendRate, 0) // false
+```
+
+- Theoretical reason to use negative 0: Mathematically the absolute value could represent speed, sign could represent direction (when car stops make it look the same direction as before it stops)
+
 ## Scope
 
 - Nested Scope
