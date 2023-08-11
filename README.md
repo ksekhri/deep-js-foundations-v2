@@ -2,7 +2,9 @@
 
 ## Types
 
-### Primitive Types
+### Types Overview
+
+#### Primitive Types
 
 "In JavaScript, everything is an object." - false
 
@@ -21,7 +23,7 @@ object
 - functions are callable objects (subtype)
 - arrays are a subtype of objects with numerical indexing
 
-### typeof Operator
+#### typeof Operator
 
 In JavaScript, variables don't have types, values do. We aren't asking the type of a variable, we're asking the type of the value. tyoeof will return a string.
 
@@ -41,7 +43,7 @@ v = function(){} // function
 v = [1, 2, 3] // object - instead Array.isArray(arr)
 ```
 
-### BigInt
+#### BigInt
 
 Integer that can grow infinitely large (limited by memory of system). Don't mix that well with regular numbers.
 
@@ -57,7 +59,7 @@ typeof v // "bigint"
 - Equality
 - TypeScript, Flow, etc.
 
-### undefined vs. undeclared
+#### undefined vs. undeclared
 
 - Undeclared - never been created in any scope we have access to
 - Undefined - Variable that has been initialized - there is a variable, but at the moment it has no value
@@ -66,7 +68,7 @@ typeof v // "bigint"
 
 typeof - only operator that can reference something that doesn't exist without throwing an error
 
-### Special Values: `NaN` and `isNaN`
+#### Special Values: `NaN` and `isNaN`
 
 `NaN`
 
@@ -97,7 +99,7 @@ isNaN('regular string') // false
 
 - `Number.isNaN` tells us whether we are feeding in the NaN value (no coercion done)
 
-### Special Values: Negative Zero
+#### Special Values: Negative Zero
 
 - Zero value with the sign bit on it
 - Early JS hid negative zero from developers
@@ -122,7 +124,7 @@ Object.is(trendRate, 0) // false
 
 - Theoretical reason to use negative 0: Mathematically the absolute value could represent speed, sign could represent direction (when car stops make it look the same direction as before it stops)
 
-### Fundamental Objects
+#### Fundamental Objects
 
 aka: Built-In Objects, Native Functions
 
@@ -144,6 +146,14 @@ Don't use new:
 - Boolean()
   Use as function to coerce value to that primitive type, not a constructor
 
+### Coercion
+
+### Philosophy of Coercion
+
+### Equality
+
+### Static Typing
+
 ## Scope
 
 - Nested Scope
@@ -151,9 +161,21 @@ Don't use new:
 - Closure
 - Modules
 
+### Scope Overview
+
+### Scope & Function Expressions
+
+### Advanced Scope
+
+### Closure
+
 ## Objects (Oriented)
 
 - this
 - class { }
 - Prototypes
 - OO vs. OLOO
+
+### Objects Overview
+
+### Prototypes
