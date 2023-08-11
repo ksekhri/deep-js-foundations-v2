@@ -1,6 +1,16 @@
-// TODO: define polyfill for `Object.is(..)`
+// define polyfill for `Object.is(..)`
 
-
+if (!Object.is || true) {
+	Object.is = function ObjectIs(x, y) {
+        const isNegZ = (val) => val === 0 && (1 / val) === -Infinity
+        const isValNan = (val) => val !== val
+        const isNumberAndNaN = (val) => typeof val === 'number' && isValNan(val)
+        if (isNegZ(x) || isNegZ(y)) {
+            return isNegZ(x) && isNegZ(y)
+        }
+        return x === y || (isNumberAndNaN(x) && isNumberAndNaN(y))
+    };
+}
 
 // tests:
 console.log(Object.is(42,42) === true);
