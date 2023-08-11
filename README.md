@@ -122,6 +122,28 @@ Object.is(trendRate, 0) // false
 
 - Theoretical reason to use negative 0: Mathematically the absolute value could represent speed, sign could represent direction (when car stops make it look the same direction as before it stops)
 
+### Fundamental Objects
+
+aka: Built-In Objects, Native Functions
+
+Bolted on object-orientedness of JS.
+
+Use new:
+
+- Object()
+- Array()
+- Function()
+- Date()
+- RegExp()
+- Error()
+
+Don't use new:
+
+- String()
+- Number()
+- Boolean()
+  Use as function to coerce value to that primitive type, not a constructor
+
 ## Scope
 
 - Nested Scope
